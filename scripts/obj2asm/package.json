@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@thi.ng/morton": "^3.1.47"
+  },
+  "module": true
+}

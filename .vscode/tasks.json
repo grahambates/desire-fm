@@ -1,0 +1,95 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "compile",
+			"type": "shell",
+			"windows": {
+				"command": "${command:amiga.bin-path}\\gnumake.exe",
+				"options": {
+					"cwd": "${workspaceRoot}",
+					"env": {
+						"PATH": "${env:PATH};${command:amiga.bin-path}\\opt\\bin;${command:amiga.bin-path}"
+					}
+				}
+			},
+			"command": "make",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"env": {
+					"PATH": "${env:PATH}:${command:amiga.bin-path}/opt/bin:${command:amiga.bin-path}"
+				}
+			},
+			"args": [
+				"-j4",
+				"program=${config:amiga.program}",
+				"BUILD=elf"
+			],
+			"problemMatcher": [
+				{
+					"base": "$gcc",
+					"fileLocation": "absolute"
+				}
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "hunks",
+			"type": "shell",
+			"command": "make",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"env": {
+					"PATH": "${env:PATH}:${command:amiga.bin-path}/opt/bin:${command:amiga.bin-path}"
+				}
+			},
+			"args": ["-j4", "BUILD=hunk"],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "dist",
+			"type": "shell",
+			"command": "make",
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"env": {
+					"PATH": "${env:PATH}:${command:amiga.bin-path}/opt/bin:${command:amiga.bin-path}"
+				}
+			},
+			"args": ["-j4", "dist"],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"windows": {
+				"command": "${command:amiga.bin-path}\\gnumake.exe"
+			},
+			"command": "make",
+			"options": {
+				"cwd": "${workspaceRoot}"
+			},
+			"args": ["clean"],
+			"problemMatcher": []
+		}
+	]
+}

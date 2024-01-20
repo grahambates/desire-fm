@@ -1,0 +1,114 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "amiga-assembly",
+			"request": "launch",
+			"name": "Amiga Assembly: A500",
+			"stopOnEntry": false,
+			"program": "${workspaceFolder}/out/desirefm.hunk-debug.exe",
+			"remoteProgram": "SYS:a.exe",
+			"emulatorType": "fs-uae",
+			"emulatorArgs": [
+				"--hard_drive_0=${workspaceFolder}/out",
+				"--automatic_input_grab=0"
+			],
+			"preLaunchTask": "hunks"
+		},
+		{
+			"type": "amiga-assembly",
+			"request": "launch",
+			"name": "Amiga Assembly: A1200",
+			"stopOnEntry": true,
+			"program": "${workspaceFolder}/out/desirefm.hunk-debug.exe",
+			"remoteProgram": "SYS:a.exe",
+			"emulatorType": "fs-uae",
+			"emulatorArgs": [
+				"--hard_drive_0=${workspaceFolder}/out",
+				"--automatic_input_grab=0",
+				"--amiga_model=A1200"
+			],
+			"preLaunchTask": "hunks"
+		},
+		{
+			"type": "amiga-assembly",
+			"request": "launch",
+			"name": "Amiga Assembly: A3000",
+			"stopOnEntry": false,
+			"program": "${workspaceFolder}/out/desirefm.hunk-debug.exe",
+			"remoteProgram": "SYS:a.exe",
+			"emulatorType": "fs-uae",
+			"emulatorArgs": [
+				"--hard_drive_0=${workspaceFolder}/out",
+				"--automatic_input_grab=0",
+				"--amiga_model=A3000",
+				"--chip_memory=2048",
+				"--fast_memory=2048"
+			],
+			"trace": false,
+			"preLaunchTask": "hunks"
+		},
+		{
+			"type": "amiga-assembly",
+			"request": "launch",
+			"name": "Amiga Assembly: A4000",
+			"stopOnEntry": false,
+			"program": "${workspaceFolder}/out/desirefm.hunk-debug.exe",
+			"remoteProgram": "SYS:a.exe",
+			"emulatorType": "fs-uae",
+			"emulatorArgs": [
+				"--hard_drive_0=${workspaceFolder}/out",
+				"--automatic_input_grab=0",
+				"--amiga_model=A4000",
+				"--chip_memory=2048",
+				"--fast_memory=2048"
+			],
+			"trace": false,
+			"preLaunchTask": "hunks"
+		},
+		{
+			"type": "amiga",
+			"request": "launch",
+			"preLaunchTask": "compile",
+			"name": "Bartman: A500",
+			"config": "A500",
+			"program": "${workspaceFolder}/${config:amiga.program}",
+			"kickstart": "${config:amiga.rom-paths.A500}",
+			"internalConsoleOptions": "openOnSessionStart",
+			"emuargs": ["--floppy_drive_0_sounds=off"]
+		},
+		{
+			"type": "amiga",
+			"request": "launch",
+			"preLaunchTask": "compile",
+			"name": "Bartman: A1200",
+			"config": "A1200",
+			"program": "${workspaceFolder}/${config:amiga.program}",
+			"kickstart": "${config:amiga.rom-paths.A1200}",
+			"internalConsoleOptions": "openOnSessionStart",
+			"emuargs": ["--floppy_drive_0_sounds=off"]
+		},
+		{
+			"type": "amiga",
+			"request": "launch",
+			"preLaunchTask": "compile",
+			"name": "Bartman: A3000",
+			"config": "A3000",
+			"program": "${workspaceFolder}/${config:amiga.program}",
+			"kickstart": "/Users/batesgw1/FS-UAE/Kickstarts/Kickstart-v2.0-rev36.143-1990-Commodore-A3000.rom",
+			"internalConsoleOptions": "openOnSessionStart",
+			"emuargs": ["--floppy_drive_0_sounds=off"]
+		},
+		{
+			"type": "amiga",
+			"request": "launch",
+			"preLaunchTask": "compile",
+			"name": "Bartman: A4000",
+			"config": "A4000",
+			"program": "${workspaceFolder}/${config:amiga.program}",
+			"kickstart": "${config:amiga.rom-paths.A4000}",
+			"internalConsoleOptions": "openOnSessionStart",
+			"emuargs": ["--floppy_drive_0_sounds=off"]
+		}
+	]
+}

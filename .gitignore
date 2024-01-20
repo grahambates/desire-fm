@@ -1,0 +1,9 @@
+out/*
+dist/*
+.DS_Store
+.vscode/settings.json
+node_modules
+*.d
+*.hunk
+*.elf
+*.zip
