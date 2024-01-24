@@ -47,8 +47,7 @@ elf_objects := $(sources:.asm=.elf)
 hunk_objects := $(sources:.asm=.hunk)
 deps := $(sources:.asm=.d)
 
-data = data/bg.BPL \
-	data/radio-logo.BPL \
+data = data/radio-logo.BPL \
 	data/radio-logo.chk \
 	data/radio-logo.PAL \
 	data/radio-numbers.BPL \
@@ -59,7 +58,6 @@ data = data/bg.BPL \
 	data/marker-5.SPR \
 	data/scope-bg.BPL \
 	data/scope-text.SPR \
-	data/scope-l.SPR \
 	data/scope-r.SPR \
 	data/scope-controls.SPR \
 	data/scope-light.SPR \
