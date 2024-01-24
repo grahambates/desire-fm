@@ -241,7 +241,7 @@ Intro_Effect:
 
 		move.w	#DMAF_SETCLR!DMAF_SPRITE,dmacon(a6)
 
-		jsr	ResetFrameCounter
+		clr.l	LocalFrame
 		lea	Script,a0
 		jsr	Commander_Init
 

@@ -21,8 +21,6 @@
 		xref	LocalFrame
 		xref	BpmFrame
 
-		xref	ResetFrameCounter
-
 		xref	PartOver
 
 		xref	VSync

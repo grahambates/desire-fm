@@ -203,7 +203,7 @@ INC_LIST_SZ = VERTS*3*4+2		; Max size based on sub/add per vertex + rts
 		move.w	d0,(a1)
 
 		move.l	#Cop,cop1lc(a6)
-		jsr	ResetFrameCounter
+		clr.l	LocalFrame
 
 		lea	Script,a0
 		jsr	Commander_Init

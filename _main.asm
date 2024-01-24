@@ -201,14 +201,6 @@ MainInterrupt:
 
 
 ********************************************************************************
-; Reset LocalFrame to zero
-;-------------------------------------------------------------------------------
-ResetFrameCounter:
-		clr.l	LocalFrame
-		rts
-
-
-********************************************************************************
 ; Switch to background task until vbi
 ;-------------------------------------------------------------------------------
 ; Big thanks to Platon42 for this writeup:
@@ -295,12 +287,8 @@ BgStackE:
 VBlankInterrupt: dc.l	0
 BlitterInterrupt: dc.l	0
 
-; Zeroed data for use as black palette, null sprite etc.
-BlankData:	ds.w	32
 ; Fill bytes e.g. white palette
 FillData:	dcb.w	16,$fff
-
-
 
 		include	include/p61settings.i
 		include	"include/P6112-Play.i"
@@ -309,6 +297,9 @@ FillData:	dcb.w	16,$fff
 *******************************************************************************
 		data_c
 *******************************************************************************
+
+; Zeroed data for use as black palette, null sprite etc.
+BlankData:	ds.w	32
 
 Module:
 		incbin	"data/P61.tune"

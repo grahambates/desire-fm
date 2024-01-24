@@ -7,7 +7,7 @@
 		include	effects/roto.i
 		include	effects/graff.i
 
-TEST_PART = 0
+TEST_PART = 2
 
 Pos		set	0
 PART		macro
